@@ -1,6 +1,10 @@
 import React from 'react'
 import FeedbackItem from './FeedbackItem'
-const FeedbackList = ({feedback}) => {
+import { useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
+
+const FeedbackList = () => {
+  const {feedback} = useContext(FeedbackContext)
   if(!feedback || feedback.length === 0){
     return <p>No Feedback Yet</p>
   }
